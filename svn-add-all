@@ -1,0 +1,4 @@
+# kinda stupid but functional add all question marks for svn
+for i in $( svn st | grep ? ); do
+    svn add $i
+done

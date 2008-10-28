@@ -1,0 +1,26 @@
+# $Id: svntouch.sh 602 2007-10-01 19:40:17Z galbrecht $
+# $URL$
+# svntouch.sh
+#  description
+#   touch a file and add it to svn
+#   this saves the steps fo having to do these two things manually:
+#   $ touch file
+#   $ svn add file
+#  usage
+#   requires at least one argument, the name of the file to touch & add
+#   $ svntouch file
+#  author
+#   greg albrecht (gba@schematic.com)
+# comment by quinn:
+#   greg's script didn't work. had to fix it. forget what i did tho =/
+
+# if we're passed an argument
+if [ "$1" ]; then
+        # and the argument doesn't exist on the filesystem as a dir, socket, pipe or file
+        if [ ! -x "$1" ]; then
+                # touch it
+                touch $1
+                # add it to svn
+                svn add $1
+        fi
+fi
