@@ -1,0 +1,15 @@
+# what it does.
+# touch (file)
+# git add (file)
+# mate (file)
+
+if [ "$1" ]; then
+        # and the argument doesn't exist on the filesystem as a dir, socket, pipe or file
+        if [ ! -x "$1" ]; then
+                # touch it
+                touch $1
+                # add it to svn
+                git add $1
+                mate $1
+        fi
+fi
