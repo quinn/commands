@@ -1,3 +1,0 @@
-CURDIR=$PWD
-cd
-source .bash_login
